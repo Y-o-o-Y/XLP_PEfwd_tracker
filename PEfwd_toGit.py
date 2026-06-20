@@ -9,10 +9,22 @@ current_date = datetime.now().strftime("%Y-%m-%d")
 db_path = "sox_history.db"  # 資料庫檔案會保存在專案目錄下
 
 # 2. 29 檔成分股 (已剔除 TSM)
-sox_29_tickers = [
-    "NVDA", "AVGO", "AMD", "QCOM", "INTC", "MU", "TXN", "AMAT", "LRCX", "ADI",
-    "KLAC", "MRVL", "MCHP", "MPWR", "ON", "NXPI", "ASML", "ARM", "SWKS", "QRVO",
-    "SLAB", "ALGM", "DIOD", "CRUS", "TER", "MKSI", "ENTG", "COHR", "AMKR"
+tickers = [
+    "PG",
+    "KO",
+    "PEP",
+    "COST",
+    "WMT",
+    "MDLZ",
+    "PM",
+    "MO",
+    "CL",
+    "EL",
+    "ADM",
+    "GIS",
+    "KMB",
+    "SYY",
+    "STZ",
 ]
 
 # 3. 初始化 SQLite 資料庫與資料表
@@ -39,7 +51,7 @@ raw_data = []
 total_market_cap = 0.0
 
 print("開始向 Finnhub API 請求數據...")
-for ticker in sox_29_tickers:
+for ticker in tickers:
     metric_url = f"https://finnhub.io/api/v1/stock/metric?symbol={ticker}&metric=all&token={api_key}"
     quote_url = f"https://finnhub.io/api/v1/quote?symbol={ticker}&token={api_key}"
     
