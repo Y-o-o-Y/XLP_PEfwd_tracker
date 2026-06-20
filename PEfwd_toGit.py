@@ -6,7 +6,7 @@ from datetime import datetime
 # 1. 基礎設定
 api_key = os.environ.get("FINNHUB_API_KEY") # 從 GitHub Secrets 安全讀取 API Key
 current_date = datetime.now().strftime("%Y-%m-%d")
-db_path = "sox_history.db"  # 資料庫檔案會保存在專案目錄下
+db_path = "XLP_history.db"  # 資料庫檔案會保存在專案目錄下
 
 # 2. 29 檔成分股 (已剔除 TSM)
 tickers = [
