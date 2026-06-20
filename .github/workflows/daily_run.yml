@@ -1,4 +1,4 @@
-name: Daily SOX Data Fetcher
+name: Daily XLP Data Fetcher
 
 on:
   schedule:
